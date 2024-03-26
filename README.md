@@ -132,6 +132,16 @@ The Makefile in the project root would call `make` in related sub-folders.
 
 The library is created in `.so` format and not added to the system libraries. The test tool expects the `libcotp.so` in the parent folder, so do first `cd test` and then run `./cotp_test`.
 
+### cmake
+Simple `cmake` build files have been added to the project.  Use these if you wish to install the libraries to a central
+location.
+
+```shell
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local/spt -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -S . -B build
+cmake --build build --parallel
+(cd build; sudo make install)
+```
+
 ## TODO
 
 - [ ] possibly add option to read QR

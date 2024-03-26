@@ -122,8 +122,8 @@ namespace cotp
 
 		std::ostringstream sb;
 		sb << "\t<path d=\"";
-		for (int y = 0; y < qr_size; y++) {
-			for (int x = 0; x < qr_size; x++) {
+		for (std::size_t y = 0; y < qr_size; y++) {
+			for (std::size_t x = 0; x < qr_size; x++) {
 				if (m_qr->getModule(x, y)) {
 					if (x != 0 || y != 0)
 						sb << " ";

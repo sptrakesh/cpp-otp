@@ -74,7 +74,7 @@ class OTP {
 	public:
 		OTP(std::string const& base32_secret, std::string const& algo, size_t digits);
 		OTP(std::string const& base32_secret, size_t bits, OTP_algorithm_ptr algo, std::string const& digest_algo_name, size_t digits);
-		~OTP() = default;
+		virtual ~OTP() = default;
 
 	    OTP(const OTP&) = delete;                  // copy constructor
 	    OTP& operator=(const OTP& other) = delete; // assignment operator

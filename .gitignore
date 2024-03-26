@@ -17,3 +17,9 @@ test/*.svg
 
 # giteye
 /.project
+
+# CLion
+cmake-*
+build
+*.iml
+**/.idea/

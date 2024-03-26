@@ -13,6 +13,7 @@
 #include <exception>
 #include <map>
 #include <regex>
+#include <sstream>
 #include <stdexcept>
 
 namespace cotp
@@ -122,7 +123,6 @@ std::string urlencode(std::vector<char> const& bytes)
 
 std::string urldecode(std::string const& str)
 {
-	size_t p = 0;
 	size_t str_size = str.size();
 	std::string decoded;
 

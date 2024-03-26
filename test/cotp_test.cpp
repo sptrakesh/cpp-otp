@@ -1,4 +1,4 @@
-
+#include <filesystem>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -15,8 +15,9 @@
 #include "cotp/otp_uri.hpp"
 
 using namespace std;
+namespace fs = std::filesystem;
 
-int main(int argc, char** argv) {
+int main() {
 	cout << "run" << endl;
 
 	////////////////////////////////////////////////////////////////
@@ -259,7 +260,7 @@ int main(int argc, char** argv) {
 	cotp::QR_code totp_qr;
 	totp_qr.set_content(totp);
 	auto totp_svg = totp_qr.get_svg();
-	svg_fn = "totp.svg";
+	svg_fn = fs::temp_directory_path().string() + "totp.svg";
 	cout << "TOTP SVG file: " << svg_fn << endl << endl;
 	svg_file.open(svg_fn);
 	svg_file << totp_svg;
@@ -289,28 +290,28 @@ int main(int argc, char** argv) {
 };
 	hotp_qr.set_decoration(decoration);
 	auto hotp_svg = hotp_qr.get_svg();
-	svg_fn = "hotp.svg";
+	svg_fn = fs::temp_directory_path().string() + "hotp.svg";
 	cout << "HOTP SVG file: " << svg_fn << endl << endl;
 	svg_file.open(svg_fn);
 	svg_file << hotp_svg;
 	svg_file.close();
 
 	totp_qr.set_content(totp_now_sha1);
-	svg_fn = "totp_sha1.svg";
+	svg_fn = fs::temp_directory_path().string() + "totp_sha1.svg";
 	cout << "TOTP SHA1 file: " << svg_fn << endl << endl;
 	svg_file.open(svg_fn);
 	svg_file << totp_qr.get_svg();
 	svg_file.close();
 
 	totp_qr.set_content(totp_now_sha256);
-	svg_fn = "totp_sha256.svg";
+	svg_fn = fs::temp_directory_path().string() + "totp_sha256.svg";
 	cout << "TOTP SHA256 file: " << svg_fn << endl << endl;
 	svg_file.open(svg_fn);
 	svg_file << totp_qr.get_svg();
 	svg_file.close();
 
 	totp_qr.set_content(totp_now_sha512);
-	svg_fn = "totp_sha512.svg";
+	svg_fn = fs::temp_directory_path().string() + "totp_sha512.svg";
 	cout << "TOTP SHA512 file: " << svg_fn << endl << endl;
 	svg_file.open(svg_fn);
 	svg_file << totp_qr.get_svg();

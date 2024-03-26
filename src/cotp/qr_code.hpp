@@ -10,8 +10,15 @@
 #pragma once
 
 #include <memory>
-#include <qrcodegen.hpp>
 #include <string>
+
+#if defined __has_include
+#if __has_include("../../deps/QR-Code-generator/qrcodegen.hpp")
+#include "../../deps/QR-Code-generator/qrcodegen.hpp"
+#else
+#include <qrcodegen/qrcodegen.hpp>
+#endif
+#endif
 
 namespace cotp
 {
