@@ -110,7 +110,7 @@ std::string urlencode(std::vector<char> const& bytes)
 	{
 		if (c < 0x20 || to_test.find(c) != std::string::npos)	// 0x80 - 0xFF are negative values
 		{
-			oss << '%' << std::hex << std::setfill('0') << std::setw(2) << std::nouppercase << ((u_int)c&0xff);
+			oss << '%' << std::hex << std::setfill('0') << std::setw(2) << std::nouppercase << (u_int(c&0xff));
 		}
 		else
 		{

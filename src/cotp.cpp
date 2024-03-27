@@ -10,6 +10,7 @@
 #include "cotp/cotp.hpp"
 #include "cotp/otp_factory.hpp"
 
+#include <cstdint>
 #include <cmath>
 #include <fstream>
 #include <iostream>
