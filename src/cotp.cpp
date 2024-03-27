@@ -102,7 +102,7 @@ std::string to_string(std::vector<char> bytes)
 
 	for(auto const c : bytes)
 	{
-		oss << std::hex << std::setfill('0') << std::setw(2) << std::nouppercase << ((u_int)c&0xff) << " ";
+		oss << std::hex << std::setfill('0') << std::setw(2) << std::nouppercase << ((uint32_t)c&0xff) << " ";
 	}
 
 	return oss.str();
