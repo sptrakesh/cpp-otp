@@ -417,11 +417,6 @@ std::string TOTP::code() const
 
 bool TOTP::verify(std::string const& key, uint64_t for_time, size_t valid_window) const
 {
-	if (valid_window < 0)
-	{
-		return false;
-	}
-
 	if (valid_window > 0)
 	{
 		for (int i = -valid_window; i < (int)valid_window; i++)
