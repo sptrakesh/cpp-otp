@@ -63,8 +63,8 @@ namespace cotp {
 
 static std::vector<char> hmac(std::vector<char> const& byte_secret, std::vector<char> const& byte_string, const EVP_MD *evp_md)
 {
-	u_char hmac_result[EVP_MAX_MD_SIZE];
-	u_int hmac_size;
+	uint8_t hmac_result[EVP_MAX_MD_SIZE];
+	uint hmac_size;
 
 	bool hmac_success = HMAC(evp_md, byte_secret.data(), byte_secret.size(), (const unsigned char*)byte_string.data(), byte_string.size(), hmac_result, &hmac_size) != nullptr;
 
